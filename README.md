@@ -1,4 +1,4 @@
-# CS312 Mini-Project 3
+# CS312 Mini-Project 4
 A blog app built with Node.js, Express, PostgreSQL-ready logic, and a React frontend connected to the backend API.
 
 ## What changed for the React integration
