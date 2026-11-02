@@ -1,0 +1,316 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f1ff;
+  color: #2a1d3d;
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.loadingpage,
+.authpage {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.headerbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4ecff;
+  border: 1px solid #d9c8ff;
+  border-radius: 8px;
+  padding: 15px 20px;
+}
+
+.sitename {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.compose,
+.blogpostfeed,
+.cardauth {
+  background: #fff;
+  border: 1px solid #d9c8ff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+h1,
+h2,
+.posttitle {
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: #5a3c8a;
+}
+
+.blogpostform,
+.rowform {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #cdb8f5;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #fdfbff;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #7a4dd8;
+  box-shadow: 0 0 0 2px rgba(122, 77, 216, 0.12);
+}
+
+.form-actions,
+.postact,
+.actionauth {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.actionauth {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.centered-actions {
+  justify-content: flex-start;
+}
+
+.welcomemessage {
+  color: #4a2d75;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid #cdb8f5;
+  border-radius: 6px;
+  background: #f0e7ff;
+  color: #2a1d3d;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primarybutton {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid #6d43c6;
+  border-radius: 6px;
+  background: #6d43c6;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: #fff;
+  color: #4a2d75;
+  border-color: #d9c8ff;
+}
+
+.btn-danger {
+  background: #fff;
+  color: #a33;
+  border-color: #d99;
+}
+
+.guest-banner p {
+  margin: 0 0 15px;
+  color: #555;
+}
+
+.emptyspace {
+  color: #666;
+  font-style: italic;
+}
+
+.postlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.post {
+  border-top: 1px solid #eee;
+  padding-top: 14px;
+}
+
+.posttitle {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.postpara {
+  margin: 0 0 10px;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.postcreator {
+  color: #5a3c8a;
+  font-weight: 700;
+}
+
+.postcontent {
+  margin: 0 0 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.inline-form {
+  display: inline;
+}
+
+.authenticationmain {
+  display: flex;
+  justify-content: center;
+}
+
+.cardauth {
+  width: min(100%, 500px);
+}
+
+.authheader {
+  margin-bottom: 15px;
+}
+
+.accountlink {
+  margin-top: 15px;
+  text-align: center;
+  color: #555;
+}
+
+.accountlink button {
+  background: none;
+  border: none;
+  color: #5a3c8a;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.alert {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin: 0 0 15px;
+}
+
+.alert.error {
+  background: #fee;
+  border: 1px solid #f2b2b2;
+  color: #a33;
+}
+
+.alert.success {
+  background: #eefaf1;
+  border: 1px solid #b9debf;
+  color: #276b39;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .loadingpage,
+  .authpage {
+    padding: 15px;
+  }
+
+  .headerbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actionauth {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .postact {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .inline-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  .posttitle {
+    font-size: 1.3rem;
+  }
+}
