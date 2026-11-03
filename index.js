@@ -68,35 +68,6 @@ async function setUpTables() {
       );
     `);
 
-    const userCheck = await pool.query("SELECT COUNT(*)::int AS count FROM users");
-    if (userCheck.rows[0].count === 0) {
-      await pool.query(`
-        INSERT INTO users (user_id, password, name) VALUES
-          ('alice', 'pass123', 'Alice Johnson'),
-          ('bob', 'pass123', 'Bob Smith'),
-          ('charlie', 'pass123', 'Charlie Brown');
-      `);
-    }
-
-    const postCheck = await pool.query("SELECT COUNT(*)::int AS count FROM blogs");
-    if (postCheck.rows[0].count === 0) {
-      const stuff = [
-        ["alice", "Alice Johnson", "Starting a New Chapter", "This is my first blog post. I am excited to begin this journaling journey and document my ideas, learning, and growth."],
-        ["bob", "Bob Smith", "A Morning Walk and Fresh Ideas", "A simple walk in the morning can clear the mind and spark new ideas. The world feels calmer when you make space to think."],
-        ["charlie", "Charlie Brown", "Why Small Habits Matter", "Consistency matters more than intensity. Small habits build momentum and create lasting change over time."],
-        ["alice", "Alice Johnson", "Learning Through Practice", "Understanding a topic deeply takes repetition and curiosity. Rehearsing the fundamentals makes the bigger ideas easier to appreciate."],
-        ["bob", "Bob Smith", "What I Want to Build Next", "The next project I want to build is one that is practical, useful, and meaningful for others. Good ideas become great when they solve real problems."],
-      ];
-
-      for (const [userId, name, title, body] of stuff) {
-        await pool.query(
-          `INSERT INTO blogs (creator_name, creator_user_id, title, body, date_created)
-           VALUES ($1, $2, $3, $4, NOW())`,
-          [name, userId, title, body]
-        );
-      }
-    }
-
     console.log("DB working");
   } catch (err) {
     dbReady = false;
